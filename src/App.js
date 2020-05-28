@@ -18,7 +18,7 @@ import { Provider } from "react-redux";
 
 // axios
 import axios from "axios";
-axios.defaults.baseURL = "https://us-central1-jasap-kb.cloudfunctions.net/api";
+// axios.defaults.baseURL = "https://us-central1-jasap-kb.cloudfunctions.net/api";
 
 class App extends React.Component {
     render() {

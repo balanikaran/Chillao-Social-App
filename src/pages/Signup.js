@@ -13,7 +13,10 @@ import {
 } from "@material-ui/core";
 
 // Redux
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
+// Redux Actions Generators
+import { signUpUser } from "../redux/actions/userActions";
 
 // images
 import AppLogo from "../images/logo.png";
@@ -66,14 +69,39 @@ const Signup = (props) => {
     // --------------
     // errors object contains errors based on the input
     // email/password/confirmPassword/username/general
-    const { isLoading, errors } = useSelector((state) => state.ui);
+    const { isLoadingUI, errors } = useSelector((state) => state.ui);
+
+    // dispatch is used to call actions
+    const dispatch = useDispatch();
+
+    // here we are checking if the user is already authenticated or not
+    // if yes -> user is redirected back to home (no point of getting to the signup page)
+    if (user.isAuthenticated) {
+        props.history.push("/");
+    }
 
     // this function is invoked when the submit(login) button
     // is clicked, we'll add more here
     const handleSubmit = (event) => {
+        // this is to prevent the default changing page behaviour when form is submitted
         event.preventDefault();
-        console.log("submit called");
-        console.log(email, password, confirmPassword, username);
+
+        // defining the new user object to be sent to the backend
+        // to create a new account
+        const userData = {
+            email,
+            password,
+            confirmPassword,
+            username,
+        };
+
+        // destructuring/extracting 'history' from props
+        const { history } = props;
+
+        // console.log(userData);
+
+        // this is the redux hooks way of calling an action using dispatch
+        dispatch(signUpUser(userData, history));
     };
 
     return (
@@ -157,7 +185,7 @@ const Signup = (props) => {
                         )
                     }
                     <br />
-                    {isLoading && (
+                    {isLoadingUI && (
                         <CircularProgress size={30} color="secondary" />
                     )}
                     <br />
@@ -166,7 +194,7 @@ const Signup = (props) => {
                         variant="outlined"
                         color="primary"
                         className={classes.button}
-                        disabled={isLoading}
+                        disabled={isLoadingUI}
                     >
                         Signup
                     </Button>

@@ -34,6 +34,7 @@ const Navbar = (props) => {
     const classes = useStyles();
     console.log(props);
     const { isAuthenticated } = props;
+
     return (
         <AppBar>
             <Toolbar>
@@ -48,8 +49,6 @@ const Navbar = (props) => {
                     color="inherit"
                     variant="h6"
                     className={classes.title}
-                    component={Link}
-                    to="/"
                 >
                     Chillao - Another Twitter
                 </Typography>
