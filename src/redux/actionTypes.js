@@ -32,8 +32,24 @@ export const SET_UNAUTHENTICATED = "SET_UNAUTHENTICATED";
 // when the user logs in/ signs up/ opens the application/ refreshes etc [isLoadingUser = True]
 export const LOADING_USER = "LOADING_USER";
 
+// This action is called when user data is fetched (we got the response) from the backend
+// when the user logs in/ signs up/ opens the application/ refreshes etc [isLoadingUser = FALSE]
+export const STOP_LOADING_USER = "STOP_LOADING_USER"
+
 // This action is called when user data is fetched from the server
 // and is to be set in the state, also does the counter of LOADING_USER [isLoadingUser = False]
 export const SET_USER = "SET_USER";
 
 // --------------- DATA REDUCER ACTIONS ---------------
+
+// This action is called when we get back the posts from the server
+// this sets the posts into store and also makes isLoadingData to [FALSE]
+export const SET_POSTS = "SET_POSTS";
+
+// This action is called when a particular post is fetched from the server/posts array
+// this saves the post to post object in REDUX data object
+export const SET_POST = "SET_POST";
+
+// This action is called when some operation on posts is being done 
+// for example -> fetching all posts/ add a new post, etc
+export const LOADING_DATA = "LOADING_DATA";

@@ -1,10 +1,13 @@
+// redux action types
 import {
     SET_AUTHENTICATED,
     SET_UNAUTHENTICATED,
     LOADING_USER,
     SET_USER,
+    STOP_LOADING_USER,
 } from "../actionTypes";
 
+// initial user object state in REDUX STORE
 const initialUserState = {
     isAuthenticated: false,
     isLoadingUser: false,
@@ -32,6 +35,11 @@ export default function (state = initialUserState, action) {
                 isAuthenticated: true,
                 isLoadingUser: false,
                 ...action.payload,
+            };
+        case STOP_LOADING_USER:
+            return {
+                ...state,
+                isLoadingUser: false,
             };
         default:
             return state;

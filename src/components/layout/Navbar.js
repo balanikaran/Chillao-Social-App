@@ -21,7 +21,7 @@ import { connect } from "react-redux";
 // to be applied on the components defined below
 const useStyles = makeStyles((theme) => ({
     logo: {
-        maxWidth: 40,
+        maxWidth: 50,
         margin: "10px 10px 10px 30px",
     },
     title: {
@@ -36,7 +36,7 @@ const Navbar = (props) => {
     const { isAuthenticated } = props;
 
     return (
-        <AppBar>
+        <AppBar elevation={0} color="transparent">
             <Toolbar>
                 <Link to="/">
                     <img
@@ -50,25 +50,22 @@ const Navbar = (props) => {
                     variant="h6"
                     className={classes.title}
                 >
-                    Chillao - Another Twitter
+                    Chillao - Just Another Social App Project
                 </Typography>
                 {isAuthenticated ? (
                     <>
                         <Button color="inherit" component={Link} to="/">
                             Notifications
                         </Button>
-                        <Button color="inherit" component={Link} to="/">
-                            Logout
-                        </Button>
                     </>
                 ) : (
                     <>
-                        <Button color="inherit" component={Link} to="/login">
+                        {/* <Button color="inherit" component={Link} to="/login">
                             Login
                         </Button>
                         <Button color="inherit" component={Link} to="/signup">
                             Signup
-                        </Button>
+                        </Button> */}
                     </>
                 )}
             </Toolbar>

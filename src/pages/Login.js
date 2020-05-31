@@ -13,7 +13,10 @@ import {
 } from "@material-ui/core";
 
 // Redux
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
+// Redux actions
+import { loginUser } from "../redux/actions/userActions";
 
 // images
 import AppLogo from "../images/logo.png";
@@ -64,13 +67,26 @@ const Login = (props) => {
     // --------------
     // errors object contains errors based on the input
     // email/password/general
-    const { isLoading, errors } = useSelector((state) => state.ui);
+    const { isLoadingUI, errors } = useSelector((state) => state.ui);
+
+    // to call action generators (REDUX)
+    const dispatch = useDispatch();
 
     // this function is invoked when the submit(login) button
     // is clicked, we'll add more here
     const handleSubmit = (event) => {
+        // to prevent redirecting/reloadding page when submit
         event.preventDefault();
-        console.log("submit called");
+        // creating userData object to send back to server
+        const userData = {
+            email,
+            password,
+        };
+        // destructuring history object from props
+        // this is used to move to new page programatically
+        const { history } = props;
+        // we call the loginUser with userData and history prop
+        dispatch(loginUser(userData, history));
     };
 
     return (
@@ -124,7 +140,7 @@ const Login = (props) => {
                         )
                     }
                     <br />
-                    {isLoading && (
+                    {isLoadingUI && (
                         <CircularProgress size={30} color="secondary" />
                     )}
                     <br />
@@ -133,7 +149,7 @@ const Login = (props) => {
                         variant="outlined"
                         color="primary"
                         className={classes.button}
-                        disabled={isLoading}
+                        disabled={isLoadingUI}
                     >
                         Login
                     </Button>
