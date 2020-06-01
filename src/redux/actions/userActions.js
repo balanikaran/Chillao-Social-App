@@ -7,6 +7,7 @@ import {
     STOP_LOADING_USER,
     SET_USER,
     SET_UNAUTHENTICATED,
+    MARK_NOTIFICATIONS_AS_READ,
 } from "../actionTypes";
 
 // axios
@@ -136,6 +137,23 @@ export const editUserDetails = (userDetails) => (dispatch) => {
             // failed -> log and stop user laoding (use previous state)
             console.log(err);
             dispatch({ type: STOP_LOADING_USER });
+        });
+};
+
+// this action generator is called when user sees his/her notifications at least once
+export const markNotificationsAsRead = (unreadNotificationsIds) => (
+    dispatch
+) => {
+    axios
+        .post("/notifications", unreadNotificationsIds)
+        .then((response) => {
+            // changing all the viewed notification "read" attribute in REDUX STATE user.notifications object
+            dispatch({
+                type: MARK_NOTIFICATIONS_AS_READ,
+            });
+        })
+        .catch((err) => {
+            console.log(err);
         });
 };
 

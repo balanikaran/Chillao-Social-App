@@ -2,6 +2,9 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
+// components
+import Notifications from "./Notifications";
+
 // Material UI
 import {
     AppBar,
@@ -32,11 +35,11 @@ const useStyles = makeStyles((theme) => ({
 const Navbar = (props) => {
     // we get back the processed theme object back in 'classes' object
     const classes = useStyles();
-    console.log(props);
+    // console.log(props);
     const { isAuthenticated } = props;
 
     return (
-        <AppBar elevation={0} color="transparent">
+        <AppBar elevation={0} color="inherit">
             <Toolbar>
                 <Link to="/">
                     <img
@@ -54,9 +57,7 @@ const Navbar = (props) => {
                 </Typography>
                 {isAuthenticated ? (
                     <>
-                        <Button color="inherit" component={Link} to="/">
-                            Notifications
-                        </Button>
+                        <Notifications />
                     </>
                 ) : (
                     <>

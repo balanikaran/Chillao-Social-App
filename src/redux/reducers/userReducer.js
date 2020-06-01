@@ -5,6 +5,9 @@ import {
     LOADING_USER,
     SET_USER,
     STOP_LOADING_USER,
+    LIKE_POST,
+    UNLIKE_POST,
+    MARK_NOTIFICATIONS_AS_READ,
 } from "../actionTypes";
 
 // initial user object state in REDUX STORE
@@ -40,6 +43,31 @@ export default function (state = initialUserState, action) {
             return {
                 ...state,
                 isLoadingUser: false,
+            };
+        case LIKE_POST:
+            return {
+                ...state,
+                likes: [
+                    ...state.likes,
+                    {
+                        username: state.credentials.username,
+                        postId: action.payload.postId,
+                    },
+                ],
+            };
+        case UNLIKE_POST:
+            return {
+                ...state,
+                likes: state.likes.filter(
+                    (like) => like.postId !== action.payload.postId
+                ),
+            };
+        case MARK_NOTIFICATIONS_AS_READ:
+            state.notifications.forEach(
+                (notification) => (notification.read = true)
+            );
+            return {
+                ...state,
             };
         default:
             return state;

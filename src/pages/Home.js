@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 // components
 import Profile from "../components/profile/Profile";
 import Post from "../components/post/Post";
+import AddPost from "../components/post/AddPost";
 
 // Material UI
 import { Typography, Grid, makeStyles } from "@material-ui/core";
@@ -51,6 +52,7 @@ const Home = (props) => {
                 <Profile />
             </Grid>
             <Grid item sm={8} xs={12}>
+                <AddPost />
                 {postsMarkup}
             </Grid>
         </Grid>

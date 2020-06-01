@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 // Redux
 import { useSelector, useDispatch } from "react-redux";
 
+// redux action generators
+import { likePost, unlikePost } from "../../redux/actions/dataActions";
+
 // Material UI
 import { IconButton } from "@material-ui/core";
 
@@ -24,6 +27,9 @@ const LikeButton = (props) => {
     // destructuring postId from the props for which the like button is being created
     const { postId } = props;
 
+    // to call action generators
+    const dispatch = useDispatch();
+
     // this function checks whether the user has already liked the post or not
     const isPostLiked = () => {
         // check if the postId exists in the likes array of user data
@@ -38,25 +44,25 @@ const LikeButton = (props) => {
     // this function is called when user unlikes the post
     // this called the unlikePost() from the dataReducer.js
     const handleLike = () => {
-        // TODO
+        dispatch(likePost(postId));
     };
 
     // this function is called when user likes the post
     // this called the likePost() from the dataReducer.js
     const handleUnlike = () => {
-        // TODO
+        dispatch(unlikePost(postId));
     };
 
     // creating the button component
-    const likeButtonMarkup = isAuthenticated ? (
-        <Link>
+    const likeButtonMarkup = !isAuthenticated ? (
+        <Link to="/login">
             <IconButton>
                 <FavoriteBorder />
             </IconButton>
         </Link>
     ) : isPostLiked() ? (
         <IconButton onClick={handleUnlike}>
-            <Favorite />
+            <Favorite color="secondary"/>
         </IconButton>
     ) : (
         <IconButton onClick={handleLike}>

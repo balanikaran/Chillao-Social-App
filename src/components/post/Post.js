@@ -6,16 +6,14 @@ import relativeTime from "dayjs/plugin/relativeTime";
 
 // components
 import LikeButton from "./LikeButton";
+import ViewPostWithCommentButton from "./ViewPostWithCommentButton";
+import DeleteButton from "./DeleteButton";
 
 // Redux
 import { useSelector, useDispatch } from "react-redux";
 
 // Material UI
 import { Paper, makeStyles, Typography, IconButton } from "@material-ui/core";
-
-// Material UI Icons
-import ChatBubbleOutlineRounded from "@material-ui/icons/ChatBubbleOutlineRounded";
-import DeleteOutlineRounded from "@material-ui/icons/DeleteOutlineRounded";
 
 // this is the styles object combined with the Material UI base theme
 // to be applied on the components defined below
@@ -90,11 +88,10 @@ const Post = (props) => {
     // else NULL
     const deleteIconMarkup =
         isAuthenticated && post.username === username ? (
-            <IconButton className={classes.deleteIcon}>
-                <DeleteOutlineRounded color="secondary" />
-            </IconButton>
+            <div className={classes.deleteIcon}>
+                <DeleteButton postId={post.postId} />
+            </div>
         ) : null;
-
 
     // TODO
     // comments dialog
@@ -115,13 +112,11 @@ const Post = (props) => {
                 {post.body}
             </Typography>
             <div className={classes.operationsDiv}>
-                <LikeButton />
+                <LikeButton postId={post.postId} />
                 <Typography className={classes.operationsText}>
                     {post.likeCount}
                 </Typography>
-                <IconButton>
-                    <ChatBubbleOutlineRounded />
-                </IconButton>
+                <ViewPostWithCommentButton postId={post.postId} fromNotifications={false}/>
                 <Typography className={classes.operationsText}>
                     {post.commentCount}
                 </Typography>

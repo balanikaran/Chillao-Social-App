@@ -34,11 +34,15 @@ export const LOADING_USER = "LOADING_USER";
 
 // This action is called when user data is fetched (we got the response) from the backend
 // when the user logs in/ signs up/ opens the application/ refreshes etc [isLoadingUser = FALSE]
-export const STOP_LOADING_USER = "STOP_LOADING_USER"
+export const STOP_LOADING_USER = "STOP_LOADING_USER";
 
 // This action is called when user data is fetched from the server
 // and is to be set in the state, also does the counter of LOADING_USER [isLoadingUser = False]
 export const SET_USER = "SET_USER";
+
+// This action is called when user has seen his/her notification at least once
+// called when user closes notifications menu from navbar
+export const MARK_NOTIFICATIONS_AS_READ = "MARK_NOTIFICATIONS_AS_READ";
 
 // --------------- DATA REDUCER ACTIONS ---------------
 
@@ -50,6 +54,24 @@ export const SET_POSTS = "SET_POSTS";
 // this saves the post to post object in REDUX data object
 export const SET_POST = "SET_POST";
 
-// This action is called when some operation on posts is being done 
+// This action is called when some operation on posts is being done
 // for example -> fetching all posts/ add a new post, etc
 export const LOADING_DATA = "LOADING_DATA";
+
+// This action is called when user likes a post
+export const LIKE_POST = "LIKE_POST";
+
+// This action is called when user unlikes a post
+export const UNLIKE_POST = "UNLIKE_POST";
+
+// this action is called when a new post is added
+// here on successful posting we add the resposne post in the REDUX STORE posts array
+export const ADD_POST = "ADD_POST";
+
+// this action is called when user adds a new comment to currently viewing post
+// this adds the new comment to the REDUX STATE data.post object
+export const POST_COMMENT = "POST_COMMENT";
+
+// this action is called when user deletes a post
+// this removes the deleted post from the REDUX STATE data.posts object
+export const DELETE_POST = "DELETE_POST";
