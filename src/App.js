@@ -8,6 +8,7 @@ import Navbar from "./components/layout/Navbar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import User from "./pages/User";
 
 // React router
 import { BrowserRouter, Switch, Route } from "react-router-dom";
@@ -74,6 +75,7 @@ const App = () => {
                         <Route exact path="/" component={Home} />
                         <Route exact path="/login" component={Login} />
                         <Route exact path="/signup" component={Signup} />
+                        <Route exact path="/users/:username" component={User} />
                     </Switch>
                 </div>
             </BrowserRouter>

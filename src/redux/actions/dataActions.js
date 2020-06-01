@@ -11,7 +11,7 @@ import {
     STOP_LOADING_UI,
     CLEAR_ERRORS,
     POST_COMMENT,
-    DELETE_POST
+    DELETE_POST,
 } from "../actionTypes";
 
 // axios
@@ -149,7 +149,30 @@ export const postComment = (postId, comment) => (dispatch) => {
         });
 };
 
-// this action geenrator is called when user wants to delete a post
+// This action generator is used to fetch user posts from the server
+// and set them to the REDUX STATE data.posts object using SET_POSTS action
+export const getUserPosts = (username) => (dispatch) => {
+    dispatch({
+        type: LOADING_DATA,
+    });
+    axios
+        .get(`/user/${username}`)
+        .then((response) => {
+            dispatch({
+                type: SET_POSTS,
+                payload: response.data.posts,
+            });
+        })
+        .catch((err) => {
+            console.log(err);
+            dispatch({
+                type: SET_POSTS,
+                payload: [],
+            });
+        });
+};
+
+// this action generator is called when user wants to delete a post
 export const deletePost = (postId) => (dispatch) => {
     axios
         .delete(`/post/${postId}`)
