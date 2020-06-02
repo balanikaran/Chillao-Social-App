@@ -11,24 +11,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { getUserPosts } from "../redux/actions/dataActions";
 
 // Material UI
-import { makeStyles, Paper, Grid } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 
 // axios
 import axios from "axios";
 
-// this is the styles object combined with the Material UI base theme
-// to be applied on the components defined below
-const useStyles = makeStyles((theme) => ({
-    paper: {
-        display: "flex",
-        flexDirection: "row",
-    },
-}));
-
 const User = (props) => {
-    // we get back the processed theme object back in 'classes' object
-    const classes = useStyles();
-
     // this is used to call action generators
     const dispatch = useDispatch();
 

@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
-
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 
 // components
 import LikeButton from "./LikeButton";
@@ -24,7 +22,6 @@ import {
     TextField,
     DialogActions,
     DialogContent,
-    DialogTitle,
     Paper,
     Typography,
     IconButton,
@@ -172,6 +169,7 @@ const ViewPostWithCommentButton = (props) => {
             <div className={classes.postHeader}>
                 <img
                     src={postWithoutComments.userImage}
+                    alt="user=profile"
                     className={classes.image}
                 />
                 <div className={classes.postHeaderContent}>

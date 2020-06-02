@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import { Link } from "react-router-dom";
-
 // components
 import ViewPostWithCommentButton from "../post/ViewPostWithCommentButton";
 

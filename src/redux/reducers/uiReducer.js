@@ -3,6 +3,7 @@ import {
     STOP_LOADING_UI,
     SET_ERRORS,
     CLEAR_ERRORS,
+    SET_UNAUTHENTICATED,
 } from "../actionTypes";
 
 const initialUiState = {
@@ -34,6 +35,8 @@ export default function (state = initialUiState, action) {
                 ...state,
                 isLoadingUI: false,
             };
+        case SET_UNAUTHENTICATED:
+            return initialUiState;
         default:
             return state;
     }

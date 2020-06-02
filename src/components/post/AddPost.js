@@ -100,7 +100,7 @@ const AddPost = (props) => {
     const addPostMarkup = isAuthenticated ? (
         <Paper variant="outlined" className={classes.paper}>
             <div className={classes.imageAndTextDiv}>
-                <img src={imageUrl} className={classes.image} />
+                <img src={imageUrl} alt="user-profile" className={classes.image} />
                 <div className={classes.textAndEditDiv}>
                     <Typography>What's new today?</Typography>
                     <TextField

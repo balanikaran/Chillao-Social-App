@@ -55,8 +55,7 @@ const Login = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    // user object is data from userReducer
-    const user = useSelector((state) => state.user);
+    
     // isLoading and errors is the object from uiReducer
     // from which we are extracting both the objects
     // --------------

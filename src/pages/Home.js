@@ -6,7 +6,7 @@ import Post from "../components/post/Post";
 import AddPost from "../components/post/AddPost";
 
 // Material UI
-import { Typography, Grid, makeStyles } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 
 // Redux
 import { useSelector, useDispatch } from "react-redux";
@@ -14,14 +14,7 @@ import { useSelector, useDispatch } from "react-redux";
 // Redux actions
 import { getAllPosts } from "../redux/actions/dataActions";
 
-// this is the styles object combined with the Material UI base theme
-// to be applied on the components defined below
-const useStyles = makeStyles((theme) => ({}));
-
 const Home = (props) => {
-    // we get back the processed theme object back in 'classes' object
-    const classes = useStyles();
-
     // to call action generators (REDUX)
     const dispatch = useDispatch();
 

@@ -6,13 +6,7 @@ import { Link } from "react-router-dom";
 import Notifications from "./Notifications";
 
 // Material UI
-import {
-    AppBar,
-    makeStyles,
-    Toolbar,
-    Typography,
-    Button,
-} from "@material-ui/core";
+import { AppBar, makeStyles, Toolbar, Typography } from "@material-ui/core";
 
 // images
 import AppLogo from "../../images/logo.png";

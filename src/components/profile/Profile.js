@@ -27,7 +27,6 @@ import EditIcon from "@material-ui/icons/Edit";
 import LinkIcon from "@material-ui/icons/Link";
 import LocationIcon from "@material-ui/icons/LocationOn";
 import CalendarIcon from "@material-ui/icons/CalendarToday";
-import LogoutIcon from "@material-ui/icons/KeyboardReturn";
 
 // Material UI Lab
 import Skeleton from "@material-ui/lab/Skeleton";

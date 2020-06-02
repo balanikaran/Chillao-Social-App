@@ -43,7 +43,7 @@ const Comment = (props) => {
     return (
         <Paper variant="outlined" className={classes.paper}>
             <div className={classes.comment}>
-                <img src={comment.userImage} className={classes.image} />
+                <img src={comment.userImage} alt="user-profile" className={classes.image} />
                 <div className={classes.commentContent}>
                     <Typography variant="button">{comment.username}</Typography>
                     <Typography variant="caption">{comment.body}</Typography>

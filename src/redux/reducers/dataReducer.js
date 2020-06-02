@@ -8,6 +8,7 @@ import {
     SET_POST,
     POST_COMMENT,
     DELETE_POST,
+    SET_UNAUTHENTICATED,
 } from "../actionTypes";
 
 // initial data object state in REDUX STORE

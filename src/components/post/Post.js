@@ -10,10 +10,10 @@ import ViewPostWithCommentButton from "./ViewPostWithCommentButton";
 import DeleteButton from "./DeleteButton";
 
 // Redux
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 // Material UI
-import { Paper, makeStyles, Typography, IconButton } from "@material-ui/core";
+import { Paper, makeStyles, Typography } from "@material-ui/core";
 
 // this is the styles object combined with the Material UI base theme
 // to be applied on the components defined below
@@ -100,7 +100,7 @@ const Post = (props) => {
     return (
         <Paper variant="outlined" className={classes.paper}>
             <div className={classes.postHeader}>
-                <img src={post.userImage} className={classes.image} />
+                <img src={post.userImage} alt="user-profile" className={classes.image} />
                 <div className={classes.postHeaderContent}>
                     <Typography variant="button">{post.username}</Typography>
                     <Typography variant="caption">

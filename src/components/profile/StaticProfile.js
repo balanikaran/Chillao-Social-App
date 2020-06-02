@@ -1,33 +1,15 @@
-import React, { createRef } from "react";
+import React from "react";
 
 import { Link } from "react-router-dom";
 
-// components
-import EditDetailsDialog from "./EditDetailsDialog";
-
-// Redux
-import { useSelector, useDispatch } from "react-redux";
-
-// Redux action generators
-import { uplaodUserImage, logoutUser } from "../../redux/actions/userActions";
-
 // Material UI
-import {
-    Paper,
-    makeStyles,
-    IconButton,
-    Tooltip,
-    Typography,
-    Button,
-} from "@material-ui/core";
+import { Paper, makeStyles, Typography } from "@material-ui/core";
 import MuiLink from "@material-ui/core/Link";
 
 // Material UI Icons
-import EditIcon from "@material-ui/icons/Edit";
 import LinkIcon from "@material-ui/icons/Link";
 import LocationIcon from "@material-ui/icons/LocationOn";
 import CalendarIcon from "@material-ui/icons/CalendarToday";
-import LogoutIcon from "@material-ui/icons/KeyboardReturn";
 
 // Material UI Lab
 import Skeleton from "@material-ui/lab/Skeleton";
