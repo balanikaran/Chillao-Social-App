@@ -1,7 +1,7 @@
-# Chillao - Social App 📱 <img src="/githubAssets/logo.png" align="right" width="192" height="192" />
+# Chillao - Social App 📱 <img src="/githubAssets/logo.png" align="right" width="170" height="170" />
 A twitter like social app written in React with Redux.
 
-## Features 🔥
+## Features 🔥 
 - Add Bio, Location and Website to profile
 - Uplaod profile image
 - Like posts
@@ -10,6 +10,11 @@ A twitter like social app written in React with Redux.
 - Minimal Materialistic UI Design
 - Signup page
 - Login page
+
+
+## Demo Video 📼 (or scroll down for Screenshots)
+
+[![youtube-mock](/githubAssets/youtube-mock.png)](https://youtu.be/EVNMiWLMegQ)
 
 ## Screenshots 🥶
 ### Home Page
