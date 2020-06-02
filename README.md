@@ -12,23 +12,23 @@ A twitter like social app written in React with Redux.
 - Login page
 
 ## Screenshots 🥶
-Home Page
+### Home Page
 <img src="/githubAssets/home-page-mock.png"/>
-Comment on Post
+### Comment on Post
 <img src="/githubAssets/comment-on-post-mock.png"/>
-Edit Details (Bio, Location and Website)
+### Edit Details (Bio, Location and Website)
 <img src="/githubAssets/edit-details-mock.png"/>
-Delete Posts
+### Delete Posts
 <img src="/githubAssets/delete-post-mock.png"/>
-Notifications (SEE TOP-RIGHT CORNER)
+### Notifications (SEE TOP-RIGHT CORNER)
 <img src="/githubAssets/notifications-mock.png"/>
-User Profile Page
+### User Profile Page
 <img src="/githubAssets/user-profile-mock.png"/>
-View Recent Posts without Login (Like Twitter)
+### View Recent Posts without Login (Like Twitter)
 <img src="/githubAssets/recent-posts-without-login-mock.png"/>
-Login Page
+### Login Page
 <img src="/githubAssets/login-form-mock.png"/>
-Sign Up Page
+### Sign Up Page
 <img src="/githubAssets/signup-page-mock.png"/>
 
 ## Technologies Used 🕹
